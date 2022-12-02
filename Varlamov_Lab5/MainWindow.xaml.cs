@@ -59,7 +59,6 @@ namespace Varlamov_Lab5
         {
             _dude2++;
             Template.Text = _dude2.Name + ", " + Convert.ToString(_dude2.Age) + ", " + _dude2.Gender + ", " + Convert.ToString(_dude2.Weight);
-
         }
 
         private void BigOrLittle(object sender, RoutedEventArgs e)
@@ -81,17 +80,17 @@ namespace Varlamov_Lab5
             }
         }
 
-        Student _student = new Student("John", 18, "Male", 65, "09.07.20", 1, 101);
+        Student _student = new Student("John", 18, "Male", 65, "Программирование", 1, 101);
 
         private void MakeStudent(object sender, RoutedEventArgs e)
         {
-            if (faculty.Text == null || !int.TryParse(course.Text, out int _course) || !int.TryParse(group.Text, out int _group))
+            if (!int.TryParse(faculty.Text, out int _faculty) & int.TryParse(course.Text, out int _course) & int.TryParse(group.Text, out int _group))
             {
-                MessageBox.Show("Ошибка");
+                _student.SetParam(faculty.Text, _course, _group);
+                StudentNoTemplate.Text = _student.Faculty + ", " + _student.Course + ", " + _student.Group;
                 return;
             }
-            _student.SetParam(faculty.Text, _course, _group);
-            StudentNoTemplate.Text = _student.Faculty + ", " + _student.Course + ", " + _student.Group;
+            MessageBox.Show("Ошибка");
         }
 
         private void NextGroup(object sender, RoutedEventArgs e)
@@ -110,7 +109,11 @@ namespace Varlamov_Lab5
         {
             MessageBox.Show("Разработчик: Варламов Артём Александрович. ИСП-34. Задание: Создать класс Man (человек), с полями: имя, возраст, пол и вес. " +
                 "\r\nСоздать необходимые методы и свойства. " +
-                "\r\nСоздать перегруженные методы SetParams, для установки параметров человека.");
+                "\r\nСоздать перегруженные методы SetParams, для установки параметров человека." +
+                "\r\nРазработать операцию для увеличения возраста на 1 год." +
+                "\r\nРазработать операции для определения кто тяжелее или легче" +
+                "\r\nСоздать производный класс Student, имеющий характеристики: факультет, курс, группа." +
+                "\r\nОпределить методы изменения возраста, веса, перехода на следующий курс, перевода в другую группу.");
         }
 
         private void Exit(object sender, RoutedEventArgs e)
