@@ -1,0 +1,116 @@
+﻿<Window x:Class="Varlamov_Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Varlamov_Lab5"
+        mc:Ignorable="d"
+        Title="Hearthstone" Height="450" Width="800" ResizeMode="CanMinimize" Icon="/Hearthstone-Logo.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.ColumnSpan="2"
+              VerticalAlignment="Top">
+            <MenuItem Header="О программе"
+                      Click="AboutProgramm"/>
+            <MenuItem Header="Выход"
+                      Click="Exit"/>
+        </Menu>
+
+        <GroupBox>
+            <Grid>
+                <TextBox Margin="10,53,210,132"
+                         x:Name="name"/>
+                <TextBox Margin="210,53,10,132"
+                         x:Name="age"/>
+                <TextBox Margin="10,108,210,77"
+                         x:Name="gender"/>
+                <TextBox Margin="210,108,10,77"
+                         x:Name="weight"/>
+                <Label Margin="70,25,273,161" 
+                       Content="Имя"/>
+                <Label Margin="262,24,62,161"
+                       Content="Возраст"/>
+                <Label Margin="70,83,273,102"
+                       Content="Пол"/>
+                <Label Margin="272,83,52,102"
+                       Content="Вес"/>
+                <Button Margin="10,150,210,35"
+                        Content="Ввести"
+                        Click="Make"/>
+                <TextBox Margin="10,180,210,5"
+                         x:Name="NoTemplate"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Column="2">
+            <Grid>
+                <Button Margin="10,25,10,160"
+                        Content="Ввести готового человека"
+                        Click="MakeTemplate"/>
+                <TextBox Margin="10,55,10,130" 
+                         x:Name="Template"/>
+                
+                <Button Margin="10,115,10,70"
+                        Content="Перевод в другую группу"
+                        Click="NextGroup"/>
+                <Button Margin="10,85, 10, 100"
+                        Content="Перевод на другой курс"
+                        Click="NextCourse"/>
+                
+                <Button Margin="10,145,10,40"
+                        Content="Увелечение возраста на год"
+                        Click="AgeMore"/>
+                <Button Margin="10,175,10,10"
+                        Content="Узнать кто больше"
+                        Click="BigOrLittle"/>
+                
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1"
+                  Grid.Column="2"
+                  Header="Прочее">
+            <Grid>
+                <Button Margin="10,90,10,68"
+                        Content="О программе"
+                        Click="AboutProgramm"/>
+                <Button Margin="10,147,10,10"
+                        Content="Выход"
+                        Click="Exit"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Студент"
+                  Grid.Row="1">
+            <Grid>
+                <TextBox Margin="10,38,210,132"
+                         x:Name="faculty"/>
+                <TextBox Margin="210,38,10,132"
+                         x:Name="course"/>
+                <TextBox Margin="10,85,210,85"
+                         x:Name="group"/>
+                <Label Margin="57,10,246,156" 
+                       Content="Факультет"/>
+                <Label Margin="262,10,62,156"
+                       Content="Курс"/>
+                <Label Margin="66,62,266,108"
+                       Content="Группа"/>
+                <Button Margin="10,131,210,39"
+                        Content="Ввести"
+                        Click="MakeStudent"/>
+                <TextBox Margin="10,160,210,10"
+                         x:Name="StudentNoTemplate"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
